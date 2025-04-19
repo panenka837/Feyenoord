@@ -3,7 +3,8 @@ import React from 'react'
 export default function Selectie() {
   const [spelers, setSpelers] = React.useState([])
   React.useEffect(() => {
-    fetch('/api/selectie')
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003';
+    fetch(`${API_URL}/api/selectie`)
       .then(res => res.json())
       .then(data => setSpelers(data))
   }, [])
