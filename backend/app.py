@@ -4,7 +4,10 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5177"]}})
+CORS(app, resources={r"/api/*": {"origins": [
+    "http://localhost:5177",
+    "https://feyenoord-demo.windsurf.build"
+]}})
 
 # Simpele selectie van Feyenoord 1 (2024-2025, voorbeeld)
 SPELERS = [
