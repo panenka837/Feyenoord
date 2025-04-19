@@ -22,6 +22,10 @@ SPELERS = [
 ]
 
 
+@app.route('/')
+def index():
+    return 'Feyenoord API is running!'
+
 @app.route('/api/hello')
 def hello():
     return jsonify({'message': 'Hallo vanaf de backend!'}), 200
