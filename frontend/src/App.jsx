@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Selectie from './Selectie'
+import ApiTest from './ApiTest'
 
 function App() {
   const [page, setPage] = React.useState('home')
@@ -23,6 +24,7 @@ function App() {
   }, [])
   return (
     <div style={{fontFamily: 'sans-serif', margin: 40}}>
+      <ApiTest />
       <h1>Feyenoord Webapplicatie</h1>
       <Navbar current={page} setPage={setPage} />
       {page === 'selectie' ? <Selectie /> : <p>{msg}</p>}
