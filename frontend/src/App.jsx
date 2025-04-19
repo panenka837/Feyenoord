@@ -6,7 +6,9 @@ function App() {
   const [page, setPage] = React.useState('home')
   const [msg, setMsg] = React.useState('')
   React.useEffect(() => {
-    fetch('/api/hello')
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003';
+    console.log('[DEBUG] Gebruikte API_URL:', API_URL);
+    fetch(`${API_URL}/api/hello`)
       .then(res => res.json())
       .then(data => setMsg(data.message))
   }, [])
